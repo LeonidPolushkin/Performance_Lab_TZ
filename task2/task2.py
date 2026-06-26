@@ -49,7 +49,11 @@ with open(sys.argv[1]) as c:
 
 dots = []
 with open(sys.argv[2]) as d:
+    count = 0
     for line in d:
+        count += 1
+        if count > 100:
+            break
         line = line.replace("\n", "")
         line = tuple(map(float, line.split()))
         dots.append(line)
